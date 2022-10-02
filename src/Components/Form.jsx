@@ -19,12 +19,12 @@ export default function Form() {
     }
   };
 
-  const HandleChange = (e) =>{
+  const HandleChange = (e) => {
     setInput(e.target.value);
 
-    if(input.trim().length === 0 ) setDis(true);
+    if (e.target.value.trim().length === 0) setDis(true);
     else setDis(false);
-  }
+  };
 
   return (
     <>
@@ -41,7 +41,9 @@ export default function Form() {
           id="outlined-basic"
           label="CountryName"
           variant="outlined"
-          onChange={(e) => { HandleChange(e) }}
+          onChange={(e) => {
+            HandleChange(e);
+          }}
         />
 
         <Button
