@@ -17,7 +17,7 @@ export default function Content({ countryData }) {
   const getWeather = async () => {
     try {
       const data = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=2bf74eff1ab55be91cfe26364433082c&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
       );
       const result = await data.json();
       setWeather(result);
